@@ -134,6 +134,7 @@ def followes(state, current):
             for x in state.edges:
                 # Follow all of their e(epsilons) too
                 followes(x, current)
+                    
 
 def match(regex, s):
     # This function will return True if and only if the regular expression
@@ -144,7 +145,7 @@ def match(regex, s):
 
     # Try to match the regular expression to the string s
     # The current set of states
-    current = (nfa.start)
+    current = set()
     # Add the first state, and follow all e(epsilon) arrows
     followes(nfa.start, current)
     # The previous set of states
