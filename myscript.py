@@ -1,6 +1,6 @@
 # Mateusz Pawlowski
 # Run a few regular expression
 
-import state
+import project
 
-print(state.match("a.b|b*", "bbbbbbbbbb"))
+print(project.match("a.b|b*", "bbbbbbbbbb"))
