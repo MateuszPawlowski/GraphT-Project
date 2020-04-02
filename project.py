@@ -195,12 +195,19 @@ if __name__ == "__main__":
     
         # Tests for '?'
         ["a?", "", True],
-        ["a??", "a", True],
+        ["a?", "a", True],
         ["a?b|b*", "bbb", True],
         ["a?b", "a",False],
         ["a?b", "b", True],
 
-    ]
+        # Tets for '+'
+        ["a+", "", False],
+        ["a+", "a", True],
+        ["a+b|b", "bbb", True],
+        ["a+b|b*", "a", False],
+        ["a+|b", "a", True],
+        ["a+|b", "", False]
+        ]
 
     for test in tests:
         assert match(test[0], test[1]) == test[2], test[0] + \
