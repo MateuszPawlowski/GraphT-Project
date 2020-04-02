@@ -33,7 +33,7 @@ def shunt(infix):
     postfix = []
 
     # Operator precedence
-    prec = {'*': 100, '.': 80, '|': 60, ')': 40, '(': 20}
+    prec = {'*': 100, '+':90, '.': 80, '?':70, '|': 60, ')': 40, '(': 20}
 
     # Loop through the input one character at a time
     while infix:
@@ -90,7 +90,6 @@ def compile(infix):
             start = frag2.start
             # The new accept state is frag1's
             accept = frag1.accept
-           
         elif c == '|':
             # Pop two fragments of the stack
             frag1 = nfa_stack.pop()
@@ -107,6 +106,22 @@ def compile(infix):
             # Create new start and accept states
             accept = State()
             start = State(edges=[frag.start, accept])
+            # Point the arrows
+            frag.accept.edges = [frag.start, accept]
+        elif c == '?':
+            # Pop a single fragment of the stack
+            frag = nfa_stack.pop()
+            # Create new start and accept states
+            accept = State()
+            start = State(edges=[frag.start, accept])
+            # Point the arrows
+            frag.accept.edges = [frag.start, accept]
+        elif c == '+':
+            # Pop a single fragment of the stack
+            frag = nfa_stack.pop()
+            # Create a new start and accept states
+            accept = State()
+            start = frag.start
             # Point the arrows
             frag.accept.edges = [frag.start, accept]
         else:
@@ -172,11 +187,19 @@ def match(regex, s):
 
 if __name__ == "__main__": 
     tests = [
+        # Tests for '.', '|', '*'
         ["a.b|b*", "bbbbb", True],
         ["a.b|b*", "bbbbx", False],
-        ["a.b", "ab", True],
         ["b**", "b", True],
-        ["b*", "", True]
+        ["b*", "", True],
+    
+        # Tests for '?'
+        ["a?", "", True],
+        ["a??", "a", True],
+        ["a?b|b*", "bbb", True],
+        ["a?b", "a",False],
+        ["a?b", "b", True],
+
     ]
 
     for test in tests:
