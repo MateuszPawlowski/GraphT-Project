@@ -1,5 +1,6 @@
 # Introduction
-This is my year 3 project for graph theory. It is a program to execute regular expressions on strings using an algorithm known as Thompson’s construction. We learned about this throughout the year, so we have a fair bit of understanding of how this algorithm works and how to execute it. The shunting algorithm is used in this piece of code which is used together with the Thompson’s construction. The language used for this project is python3 as it is a very simple language and quite easy to learn. The whole project can be found on my GitHub with this link provided: https://github.com/MateuszPawlowski/GraphT-Project.  We created ourselves a virtual machine on the google cloud and we coded the whole program on that virtual machine. For the virtual machine we used the European servers (London) and for the Boot disk we used Debian 10Debian GNU/Linux 10 (buster). The rest of the options for the virtual machine we left as normal, but feel free to change it up to your liking. Once you create a virtual machine, you have to wait for a few minutes before it completes to build. When fully built the virtual machine will be turned on and to access it you go to the right-hand side of the machine and press the SSH button under connect. This will load and open the virtual machine as shown on the image. When you are done using the virtual machine you can press the X button on the top right-hand side of the tab or type in ‘exit’ into the command line. Make sure whenever you are finished working with the virtual machine, you turn it off. In order to do that, just beside connect to the right you will see these three dots. If you press them you can stop the virtual machine from running in order to not loose your credits. Once stop is pressed it will take few seconds for the machine to turn off and you will get a notification saying the machine is stopped now. To turn it back on you do the same thing as for stop but press the start button and wait for the machine to be turned on. You will see it working when there is going to be a green tick arrow as seen in the image provided. 
+This is my year 3 project for graph theory. It is a program to execute regular expressions on strings using an algorithm known as Thompson’s construction. We learned about this throughout the year, so we have a fair bit of understanding of how this algorithm works and how to execute it. The shunting algorithm is used in this piece of code which is used together with the Thompson’s construction. The language used for this project is python3 as it is a very simple language and quite easy to learn. The whole project can be found on my GitHub with this link provided: https://github.com/MateuszPawlowski/GraphT-Project.  We created ourselves a virtual machine on the google cloud and we coded the whole program on that virtual machine. For the virtual machine we used the European servers (London) and for the Boot disk we used Debian 10Debian GNU/Linux 10 (buster). The rest of the options for the virtual machine we left as normal, but feel free to change it up to your liking. Once you create a virtual machine, you have to wait for a few minutes before it completes to build. When fully built the virtual machine will be turned on and to access it you go to the right-hand side of the machine and press the SSH button under connect. This will load and open the virtual machine as shown on the image. When you are done using the virtual machine you can press the X button on the top right-hand side of the tab or type in ‘exit’ into the command line. Make sure whenever you are finished working with the virtual machine, you turn it off. In order to do that, just beside connect to the right you will see these three dots. If you press them you can stop the virtual machine from running in order to not loose your credits. Once stop is pressed it will take few seconds for the machine to turn off and you will get a notification saying the machine is stopped now. To turn it back on you do the same thing as for stop but press the start button and wait for the machine to be turned on. You will see it working when there is going to be a green tick arrow as seen in the image provided.  
+![](images/virtualMachine.PNG)
 
 # Run
 In order to run this program, there are some steps before hand you need to complete to get it working. As said before, first you have to go into the GitHub link provided and copy the link. Once that is done, turn on your virtual machine and press the SSH button. Once the virtual machine is turned on there are a few things you need to download before cloning the repository. First this is what you need to update and upgrade the virtual machine, in order to do that you do: 
@@ -27,10 +28,10 @@ To download you will say:
 Whilst all that is done you are ready to clone the repository. So with the link from GitHub go to your virtual machine and type in git clone (link) https://github.com/MateuszPawlowski/GraphT-Project. A new folder will be created on the virtual machine called GraphT-Project. In order to get into that directory, you will type in cd GraphT-Project. You can check if that worked by typing in ‘ls’ into the command line. If you see few programs like myscript.py, project.py and shunting.py you know you are in the good directory. To run the main project, you will type in:  
 - python3 project.py – to run the main program.  
 - vi project.py – to look at the code of the program. In order to edit the program, you will have to press i and on the bottom left-hand side you will see insert meaning now you can insert your own code into the program. To save you press Escape and after press :wq.  
-**Run the program (python3 project.py)**  
-image  
-**Part of the code (vi project.py)**  
-image
+**Run the program (python3 project.py):**  
+![](images/virtualMachineRunning.PNG)
+**Part of the code (vi project.py):**  
+![](images/virtualMachineCode.PNG)
 
 # Tests
 For testing this project, I used some examples we got from our teacher before and created my own tests from them too. These are all the tests I do when the program is running.  
@@ -54,15 +55,19 @@ For testing this project, I used some examples we got from our teacher before an
 "a+b|b*", "a", False  
 "a+|b", "a", True  
 "a+|b", "", False  
-image
+![](images/virtualMachineTests.PNG.PNG)  
 
 # Algorithm
 Thompson’s Construction was created by Ken Thompson and it is a method of transforming regular expressions into nondeterministic finite automaton (NFA). This allows to match strings against regular expressions.  
 Here are some examples of how the whole Thompson Construction works.  
-image  
-image  
-image  
-image  
+**a:**  
+![](images/VMa.PNG)  
+**a.b:**  
+![](images/VMab.PNG)  
+**a.b|c:**  
+![](images/VMabOrC.PNG)  
+**(a.b|c)*:**  
+![](images/VMabOrCStar.PNG)
 
 Shunting Yard algorithm was invented by Edsger Dijkstra and it is a method for parsing math expression specified in infix notation. It will produce a postfix notation also known as Reverse Polish Notation (RPN) or an abstract syntax tree (AST). Shunting yard algorithm is stack-based. 2 + 5 is the mathematical notation, for conversion there are two text variables, input, and output. There is also a stack that holds the operators not yet added to the output que. For conversion, the program reads the symbols and does something based on that symbol. For instance, the 2 + 5 that we had in the beginning would turn into 2 5 +.  
 Here are some more examples:  
