@@ -79,7 +79,7 @@ Here are some more examples:
 
 # References
 I did not have to use a lot of references as the videos and links we got from out teacher helped me out a lot in this project and allowed me basically to do the whole project without looking up much about the project. But whilst searching I found some very interesting and helpful websites for people that want to understand Thompson’s Construction and Shunting Yard algorithm more.  
-- https://www.python.org/ – I used the official python website as, python is not a language I had much experience with before so I looked up some parts in order to find out how to do particular code in shortest amount of lines.  
+- https://www.python.org/ – I used the official python website as python is not a language I had much experience with before so I looked up some parts in order to find out how to do particular code in shortest amount of lines.  
 - http://www.reedbeta.com/blog/the-shunting-yard-algorithm/ – I used this website to get more knowledge about the shunting yard algorithm. This website describes the whole algorithm in great details and has some great examples.  
 - http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html – This is a very simple website not giving much information about Thompsons’s Construction but as said, it is very simple and for a beginner that just started learning what this algorithm is, this website is great.  
 - https://www.cs.york.ac.uk/fp/lsa/lectures/REToC.pdf - This pdf gives you a lot of examples of the Thompson’s Construction. Very good for people that need images in order to understand the algorithm.
