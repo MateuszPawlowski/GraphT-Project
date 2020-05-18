@@ -1,6 +1,6 @@
 # Mateusz Pawlowski
 # Classes used in thompson's construction
-
+import argparse
 class State:
     """A state with one or two edges, all edges labeled by label"""
     # Constructor for the class
@@ -186,6 +186,15 @@ def match(regex, s):
     return nfa.accept in current
 
 if __name__ == "__main__": 
+    parser = argparse.ArgumentParser(description='This is a software development Year 3 ' +
+            'project for graph theory. It is a program to execute regular expressions on ' + 
+            'strings using an algorithm known as Thompsons Construction. The shunting ' +
+            'algorithm is used which uses the Thompsons Construction. To run the program ' +
+            'type in: python3 project.py To see the code type in: vi project.py ' +
+            'created by Mateusz Pawlowski - G0i0361162')
+
+    args = parser.parse_args()
+
     tests = [
         # Tests for '.', '|', '*'
         ["a.b|b*", "bbbbb", True],
